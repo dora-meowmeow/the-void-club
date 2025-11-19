@@ -1,0 +1,31 @@
+# Template file for 'magnum-integration'
+pkgname=magnum-integration
+version=2025.47
+revision=1
+build_style=cmake
+configure_args="-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DMAGNUM_WITH_BULLETINTEGRATION=ON -DMAGNUM_WITH_GLMINTEGRATION=ON -DMAGNUM_WITH_IMGUIINTEGRATION=ON -DMAGNUM_WITH_EIGENINTEGRATION=ON"
+hostmakedepends="git wget tar"
+makedepends="corrade magnum bullet-devel glm eigen libglvnd-devel"
+short_desc="Integration libraries for the Magnum C++11 graphics engine (Bullet, Eigen, GLM, and IMGUI[1.92.4])"
+maintainer="Dora 'cat' <cat@thenight.club>"
+license="MIT"
+homepage="https://magnum.graphics/"
+changelog="https://doc.magnum.graphics/magnum/changelog-integration.html"
+repository=magnum
+
+do_fetch(){
+	git clone https://github.com/mosra/magnum-integration/ "$wrksrc"
+	cd $wrksrc
+	wget https://github.com/ocornut/imgui/archive/refs/tags/v1.92.4.tar.gz -O imgui.tar.gz
+}
+
+pre_configure(){
+	cd $wrksrc
+	tar xf imgui.tar.gz -C src/MagnumExternal/
+	mv src/MagnumExternal/imgui-1.92.4 src/MagnumExternal/ImGui
+}
+
+post_install() {
+	vlicense COPYING LICENSE
+}
+

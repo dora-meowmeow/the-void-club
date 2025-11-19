@@ -1,0 +1,22 @@
+# Template file for 'magnum-extras'
+pkgname=magnum-extras
+version=2025.47
+revision=1
+build_style=cmake
+configure_args="-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DMAGNUM_WITH_UI=ON"
+hostmakedepends="git"
+makedepends="corrade magnum libglvnd Vulkan-Headers SDL2-devel"
+short_desc="Extra functionality for the Magnum C++11/C++14 graphics engine"
+maintainer="Dora 'cat' <cat@thenight.club>"
+license="MIT"
+homepage="https://magnum.graphics/"
+changelog="https://doc.magnum.graphics/magnum/changelog-extras.html"
+repository=magnum
+
+do_fetch(){
+	git clone https://github.com/mosra/magnum-extras/ "$wrksrc"
+}
+
+post_install() {
+	vlicense COPYING LICENSE
+}

@@ -1,0 +1,21 @@
+# Template file for 'corrade'
+pkgname=corrade
+version=2025.47
+revision=1
+build_style=cmake
+configure_args="-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCORRADE_CPU_USE_IFUNC=OFF"
+hostmakedepends="git"
+short_desc="A multiplatform utility library written in C++11"
+maintainer="Dora 'cat' <cat@thenight.club>"
+license="MIT"
+homepage="https://magnum.graphics/corrade/"
+changelog="https://github.com/mosra/corrade/blob/master/doc/corrade-changelog.dox"
+repository=magnum
+
+do_fetch(){
+	git clone https://github.com/mosra/corrade/ "$wrksrc"
+}
+
+post_install() {
+	vlicense COPYING LICENSE
+}
