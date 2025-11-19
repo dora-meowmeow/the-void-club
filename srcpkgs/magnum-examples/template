@@ -1,6 +1,6 @@
 # Template file for 'magnum-examples'
 pkgname=magnum-examples
-version=2025.47
+version=2020.06.r300.g9d697658
 revision=1
 build_style=cmake
 configure_args="-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DMAGNUM_WITH_ANIMATED_GIF_EXAMPLE=ON -DMAGNUM_WITH_ARCBALL_EXAMPLE=ON -DMAGNUM_WITH_AREALIGHTS_EXAMPLE=ON -DMAGNUM_WITH_AUDIO_EXAMPLE=ON -DMAGNUM_WITH_BOX2D_EXAMPLE=ON -DMAGNUM_WITH_BULLET_EXAMPLE=ON -DMAGNUM_WITH_DART_EXAMPLE=OFF -DMAGNUM_WITH_CUBEMAP_EXAMPLE=ON -DMAGNUM_WITH_FLUIDSIMULATION2D_EXAMPLE=ON -DMAGNUM_WITH_FLUIDSIMULATION3D_EXAMPLE=ON -DMAGNUM_WITH_IMGUI_EXAMPLE=OFF -DMAGNUM_WITH_MOTIONBLUR_EXAMPLE=ON -DMAGNUM_WITH_MOUSEINTERACTION_EXAMPLE=ON -DMAGNUM_WITH_OCTREE_EXAMPLE=ON -DMAGNUM_WITH_PICKING_EXAMPLE=ON -DMAGNUM_WITH_PRIMITIVES_EXAMPLE=ON -DMAGNUM_WITH_RAYTRACING_EXAMPLE=ON -DMAGNUM_WITH_SHADOWS_EXAMPLE=ON -DMAGNUM_WITH_TEXT_EXAMPLE=ON -DMAGNUM_WITH_TEXTUREDQUAD_EXAMPLE=ON -DMAGNUM_WITH_TRIANGLE_EXAMPLE=ON -DMAGNUM_WITH_TRIANGLE_PLAIN_GLFW_EXAMPLE=ON -DMAGNUM_WITH_TRIANGLE_SOKOL_EXAMPLE=OFF -DMAGNUM_WITH_VIEWER_EXAMPLE=ON"
@@ -11,10 +11,18 @@ maintainer="Dora 'cat' <cat@thenight.club>"
 license="MIT"
 homepage="https://magnum.graphics/"
 changelog="https://doc.magnum.graphics/magnum/changelog-examples.html"
-repository=magnum
 
 do_fetch(){
 	git clone https://github.com/mosra/magnum-examples "$wrksrc"
+}
+
+pre_configure(){
+  actual_version=$(git describe --long | sed -r 's/([^-]*-g)/r\1/;s/-/./g;s/v//g')
+
+  if [[ $actual_version != $version ]] then
+      echo "Update version to $actual_version"
+      exit 1
+  fi
 }
 
 post_install() {

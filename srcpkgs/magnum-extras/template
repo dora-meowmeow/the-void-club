@@ -1,6 +1,6 @@
 # Template file for 'magnum-extras'
 pkgname=magnum-extras
-version=2025.47
+version=2020.06.r991.gf7fe781
 revision=1
 build_style=cmake
 configure_args="-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DMAGNUM_WITH_UI=ON"
@@ -11,10 +11,18 @@ maintainer="Dora 'cat' <cat@thenight.club>"
 license="MIT"
 homepage="https://magnum.graphics/"
 changelog="https://doc.magnum.graphics/magnum/changelog-extras.html"
-repository=magnum
 
 do_fetch(){
 	git clone https://github.com/mosra/magnum-extras/ "$wrksrc"
+}
+
+pre_configure(){
+  actual_version=$(git describe --long | sed -r 's/([^-]*-g)/r\1/;s/-/./g;s/v//g')
+
+  if [[ $actual_version != $version ]] then
+      echo "Update version to $actual_version"
+      exit 1
+  fi
 }
 
 post_install() {
