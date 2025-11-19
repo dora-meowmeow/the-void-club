@@ -4,7 +4,7 @@ version=2020.06.r347.g090b67d
 revision=1
 build_style=cmake
 configure_args="-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DMAGNUM_WITH_BULLETINTEGRATION=ON -DMAGNUM_WITH_GLMINTEGRATION=ON -DMAGNUM_WITH_IMGUIINTEGRATION=ON -DMAGNUM_WITH_EIGENINTEGRATION=ON"
-hostmakedepends="git wget tar"
+hostmakedepends="git wget tar corrade"
 makedepends="corrade magnum bullet-devel glm eigen libglvnd-devel"
 short_desc="Integration libraries for the Magnum C++11 graphics engine (Bullet, Eigen, GLM, and IMGUI[1.92.4])"
 maintainer="Dora 'cat' <cat@thenight.club>"
