@@ -1,4 +1,6 @@
-## The XBPS source packages collection
+## The Void Club XBPS repo
+
+# TODO: a proper README.md
 
 This repository contains the XBPS source packages collection to build binary packages
 for the Void Linux distribution.
