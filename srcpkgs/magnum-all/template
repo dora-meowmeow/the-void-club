@@ -1,0 +1,11 @@
+# Template file for 'magnum-all'
+pkgname=magnum-all
+version=2020.06
+revision=1
+depends="corrade magnum magnum-plugins magnum-extras magnum-integration magnum-examples"
+short_desc="All packages(include magnum-examples) meta package"
+maintainer="Dora 'cat' <cat@thenight.club>"
+license="Public Domain"
+homepage="https://magnum.graphics/"
+changelog="https://doc.magnum.graphics/magnum/changelog.html"
+metapackage=yes

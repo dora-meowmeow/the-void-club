@@ -4565,9 +4565,8 @@ libMagnumShaderTools.so.2 magnum-2020.06.r3516.g3a2c1292e_1
 libMagnumText.so.2 magnum-2020.06.r3516.g3a2c1292e_1
 libMagnumTextureTools.so.2 magnum-2020.06.r3516.g3a2c1292e_1
 libMagnumTrade.so.2 magnum-2020.06.r3516.g3a2c1292e_1
-libMagnumImGuiIntegration.so.2 magnum-integration-2020.06.r347.g090b67d2025.47_1
-libMagnumGlmIntegration.so.2 magnum-integration-2020.06.r347.g090b67d2025.47_1
-libMagnumBulletIntegration.so.2 magnum-integration-2020.06.r347.g090b67d2025.47_1
+libMagnumImGuiIntegration.so.2 magnum-integration-2020.06.r347.g090b67d_1
+libMagnumGlmIntegration.so.2 magnum-integration-2020.06.r347.g090b67d_1
+libMagnumBulletIntegration.so.2 magnum-integration-2020.06.r347.g090b67d_1
 libMagnumUi.so.2 magnum-extras-2020.06.r991.gf7fe781_1
 libMagnumOpenDdl.so.2 magnum-plugins-2020.06.r1686.gf2d054a1_1
-
