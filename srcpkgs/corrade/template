@@ -3,7 +3,7 @@ pkgname=corrade
 version=2020.06.r2021.g4d462c1e
 revision=1
 build_style=cmake
-configure_args="-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCORRADE_CPU_USE_IFUNC=OFF"
+configure_args="-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCORRADE_CPU_USE_IFUNC=OFF -DCORRADE_WITH_RC=ON"
 hostmakedepends="git"
 short_desc="A multiplatform utility library written in C++11"
 maintainer="Dora 'cat' <cat@thenight.club>"
