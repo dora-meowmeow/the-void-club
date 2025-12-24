@@ -1,6 +1,6 @@
 # Template file for 'magnum-integration'
 pkgname=magnum-integration
-version=2020.06.r347.g090b67d
+version=2020.06.r354.g354f129
 revision=1
 build_style=cmake
 configure_args="-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DMAGNUM_WITH_BULLETINTEGRATION=ON -DMAGNUM_WITH_GLMINTEGRATION=ON -DMAGNUM_WITH_IMGUIINTEGRATION=ON -DMAGNUM_WITH_EIGENINTEGRATION=ON"

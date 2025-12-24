@@ -1,6 +1,6 @@
 # Template file for 'magnum-extras'
 pkgname=magnum-extras
-version=2020.06.r991.gf7fe781
+version=2020.06.r1047.g7aec9d9
 revision=1
 build_style=cmake
 configure_args="-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DMAGNUM_WITH_UI=ON"

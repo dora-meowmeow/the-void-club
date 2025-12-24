@@ -1,6 +1,6 @@
 # Template file for 'corrade'
 pkgname=corrade
-version=2020.06.r2021.g4d462c1e
+version=2020.06.r2032.gb65bcc0d
 revision=1
 build_style=cmake
 configure_args="-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCORRADE_CPU_USE_IFUNC=OFF"
