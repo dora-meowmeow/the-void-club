@@ -11,6 +11,11 @@ license="MIT"
 homepage="https://magnum.graphics/corrade/"
 changelog="https://github.com/mosra/corrade/blob/master/doc/corrade-changelog.dox"
 
+# For ARM corrade
+if [ "$CROSS_BUILD" ]; then
+	hostmakedepends+=" ${pkgname}"
+fi
+
 do_fetch(){
 	git clone https://github.com/mosra/corrade/ "$wrksrc"
 }
